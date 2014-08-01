@@ -9,13 +9,18 @@ This is to crawl Webmaster Tools information automaticaly using [Phantom.js](htt
 
 一部、手動で整形が必要です
 
+## Usage
+
+phantomjs wmt-phantomjs.coffee [side-domain]  [output-name]
+
 ## Setting
 
   1. Phantom.jsをインストールする
-  2. setting-example.js を setting.js と名前を変えて、アカウント情報などを入れる
-  3. run-example.sh を run.sh と名前を変えて、クロールするサイト情報を入れる
-  4. `./run.sh` を実行する
-  5. `./log/` フォルダに一式が
+  1. setting-example.js を setting.js と名前を変えて、アカウント情報などを入れる
+  1. run-example.sh を run.sh と名前を変えて、クロールするサイト情報を入れる
+  1. `bower install` を実行する
+  1. `./run.sh` を実行する
+  1. `./log/` フォルダに一式が
 
 ## まとめ方
 
