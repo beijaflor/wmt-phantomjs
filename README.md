@@ -11,7 +11,9 @@ This is to crawl Webmaster Tools information automaticaly using [Phantom.js](htt
 
 ## Usage
 
+```
 phantomjs wmt-phantomjs.coffee [side-domain]  [output-name]
+```
 
 ## Setting
 
