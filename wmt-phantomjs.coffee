@@ -228,7 +228,7 @@ new funcs([
 
 		waitUntil( () ->
 			return page.evaluate () ->
-				return !!document.querySelector(".timestamp")
+				return !!document.querySelector(".timestamp") || !!document.querySelector(".empty-mini")
 		,{} , () ->
 			page.injectJs path2jQuery
 			phantom.out_src += util.getLoc()
@@ -266,7 +266,7 @@ new funcs([
 
 		waitUntil( () ->
 			return page.evaluate () ->
-				return !!document.querySelector("#backlinks-dashboard")
+				return !!document.querySelector("#backlinks-dashboard") || !!document.querySelector(".empty-mini")
 		,{} , () ->
 			page.injectJs path2jQuery
 			phantom.out_src += util.getLoc()
@@ -290,7 +290,7 @@ new funcs([
 
 		waitUntil( () ->
 			return page.evaluate () ->
-				return !!document.querySelector(".wmxCardTabBar")
+				return !!document.querySelector(".wmxCardTabBar") || !!document.querySelector("#wmx_gwt_feature_CRAWL_ERRORS .gwt-InlineLabel")
 		,{} , () ->
 			page.injectJs path2jQuery
 			phantom.out_src += util.getLoc()
