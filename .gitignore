@@ -3,6 +3,7 @@
 ### for This Project ###
 rack
 log
+archive
 run.sh
 setting.js
 

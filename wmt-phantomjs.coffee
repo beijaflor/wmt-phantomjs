@@ -408,11 +408,11 @@ new funcs([
 				return $(".GOJ0WDDBPNB").html()
 			phantom.out_src += '\n-----\n'
 			phantom.out_json.sitemap_sent = page.evaluate () ->
-				return $(".wmxCard .GOJ0WDDBMB").eq(2).text()
+				return $(".wmxCard .GG2CFPACMB").eq(2).text()
 			phantom.out_json.sitemap_indexed = page.evaluate () ->
-				return $(".wmxCard .GOJ0WDDBMB").eq(3).text()
+				return $(".wmxCard .GG2CFPACMB").eq(3).text()
 			phantom.out_json.sitemap_num = page.evaluate () ->
-				return $(".GOJ0WDDBPHB .GOJ0WDDBJKB .GOJ0WDDBJKB").eq(0).text()
+				return $(".GG2CFPACHLB .GG2CFPACHLB").eq(0).text()
 
 			console.log JSON.stringify(phantom.out_json)
 			renderTo('sitemaps.png')
