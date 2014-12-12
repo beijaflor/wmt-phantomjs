@@ -76,7 +76,7 @@ funcs.prototype =
 waitUntil = (fn, options, callback) ->
 
 	options = options || {}
-	retry = options["retry"] || 10
+	retry = options["retry"] || 30
 	wait = options["wait"] || 1
 
 	result = fn()
@@ -175,13 +175,13 @@ new funcs([
 				return $("#structured-data-summary-tablePanel table").html()
 			phantom.out_src += '\n-----\n'
 			phantom.out_json.stdata_item = page.evaluate () ->
-				return $(".GOJ0WDDBMB").eq(0).text()
+				return $(".GG2CFPACFKB .wmt-legend-count").eq(0).text()
 			phantom.out_json.stdata_item_err = page.evaluate () ->
-				return $(".GOJ0WDDBBC").eq(0).text()
+				return $(".GG2CFPACFKB .wmt-legend-sub-text").eq(1).text()
 			phantom.out_json.stdata_page = page.evaluate () ->
-				return $(".GOJ0WDDBMB").eq(1).text()
+				return $(".GG2CFPACFKB .wmt-legend-count").eq(0).text()
 			phantom.out_json.stdata_page_err = page.evaluate () ->
-				return $(".GOJ0WDDBBC").eq(1).text()
+				return $(".GG2CFPACFKB .wmt-legend-sub-text").eq(1).text()
 
 			console.log JSON.stringify(phantom.out_json)
 			renderTo('structure-data.png')
@@ -211,9 +211,9 @@ new funcs([
 			phantom.out_json.query_num = page.evaluate () ->
 				return $("table.properties-table td.property .primary").eq(0).text()
 			phantom.out_json.display_num = page.evaluate () ->
-				return $("table.properties-table td.property .primary").eq(1).text()
+				return $("table.properties-table td.property .primary").eq(1).find("span.count").text()
 			phantom.out_json.click_num = page.evaluate () ->
-				return $("table.properties-table td.property .primary").eq(2).text()
+				return $("table.properties-table td.property .primary").eq(2).find("span.count").text()
 
 			console.log JSON.stringify(phantom.out_json)
 			renderTo('search-query.png')
@@ -408,9 +408,9 @@ new funcs([
 				return $(".GOJ0WDDBPNB").html()
 			phantom.out_src += '\n-----\n'
 			phantom.out_json.sitemap_sent = page.evaluate () ->
-				return $(".wmxCard .GG2CFPACMB").eq(2).text()
+				return $(".wmxCardTabBar .wmt-legend-count").eq(2).text()
 			phantom.out_json.sitemap_indexed = page.evaluate () ->
-				return $(".wmxCard .GG2CFPACMB").eq(3).text()
+				return $(".wmxCardTabBar .wmt-legend-count").eq(3).text()
 			phantom.out_json.sitemap_num = page.evaluate () ->
 				return $(".GG2CFPACHLB .GG2CFPACHLB").eq(0).text()
 
