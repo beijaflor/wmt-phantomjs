@@ -138,8 +138,8 @@ new funcs([
 				return !!document.querySelector("#gaia_loginform")
 		, {}, () ->
 			page.evaluate () ->
-				document.getElementById("Email").value = "webmasters@nttr.co.jp"
-				document.getElementById("Passwd").value = "CFVxxURbnwrb"
+				document.getElementById("Email").value = "xxx"
+				document.getElementById("Passwd").value = "xxx"
 				return
 			renderTo('login.png')
 			page.evaluate () ->
