@@ -1,7 +1,7 @@
 Webmaster Tools Crawler
 ====
 
-This is to crawl Webmaster Tools information automaticaly using [Phantom.js](http://phantomjs.org/).
+This is to crawl Webmaster Tools information automaticaly using [Phantom.js](http://phantomjs.org/) and [CasperJS](http://casperjs.org/).
 
 ## caucion
 
@@ -12,7 +12,7 @@ This is to crawl Webmaster Tools information automaticaly using [Phantom.js](htt
 ## Usage
 
 ```
-phantomjs wmt-phantomjs.coffee [side-domain]  [output-name]
+casperjs --ignore-ssl-errors=yes wmt-casper.coffee [side-domain] [output-name]
 ```
 
 ## Setting
@@ -31,10 +31,6 @@ phantomjs wmt-phantomjs.coffee [side-domain]  [output-name]
   3. 同様に `\n` を一斉置換で削除
   4. `all.json` を [適当な変換ツール](http://konklone.io/json/) でCSVに変換
   5. `err-*l`, `err-*d` 系の並び順を手動で変換
-
-## Licence
-
-MIT
 
 ## Auther
 
