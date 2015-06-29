@@ -20,13 +20,14 @@ d = new Date()
 
 # VARIABLES site
 SITE = "https://www.google.com/webmasters/tools/"
-CC   = "hl=ja"
+CC   = "hl=en"
 ACCOUNT = setting.account
 PASSWD  = setting.passwd
 DATE_BEGIN  = 'db=' + setting.date_begin
 DATE_END    = 'de=' + setting.date_end
 TODAY       = [d.getFullYear(), d.getMonth()+1, d.getDate()].join '-'
 RENDER_MODE = setting.render_mode
+UA          = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36"
 
 # VARIABLES from arguments
 URL  = "siteUrl=" + casper.cli.get(0)
@@ -49,9 +50,15 @@ render = (fn) ->
 	path = path2log + NAME + '-' + fn
 	if RENDER_MODE
 		this.capture(path)
+#		console.log this.evaluate () ->
+#			document.getElementsByTagName('html')[0].innerHTML;
 	return
 
-casper.start "https://accounts.google.com/ServiceLogin", () ->
+casper.start()
+
+casper.userAgent UA
+
+casper.thenOpen "https://accounts.google.com/ServiceLogin?#{CC}", () ->
 	console.log('スタート')
 	render.bind(this)("before-login.png")
 	this.fill('form#gaia_loginform', { Email: ACCOUNT }, false);
@@ -76,7 +83,8 @@ casper.then () ->
 
 # login
 casper.waitFor () ->
-	return this.getCurrentUrl().match(/https:\/\/www\.google\.com\/settings\/general-light/) != null
+	url = this.getCurrentUrl()
+	return url.match(/https:\/\/www\.google\.com\/settings\/general-light/) != null || url.match(/https:\/\/myaccount\.google\.com\//) != null
 
 casper.then () ->
 	console.log('ログイン完了')
